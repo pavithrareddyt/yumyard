@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grill BBQ</title>
+    <link rel="stylesheet" href="/css/menu.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header> <div class="navbar">
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/menu">MENU</a></li>
+            <li><a href="/login">SIGN UP</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/contact">CONTACT US</a></li>
+        </ul>
+    </div></header>
+    <div class="body-part">
+        <p class="p">OUR STORY</p>
+        <p class="p1">Savor. Enjoy. Repeat....</p>
+    </div>
+    <section id="dishes">
+        <h2>Restaurants</h2>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.bwg3l7jIB0cwsn4zY9gzFgHaE6&pid=Api&P=0&h=180" alt="Cobb Salad">
+				<form action="/saveRestaurant" method="post">
+								                <input type="hidden" name="registrationNumber" value="userRegistrationNumber"> <!-- Replace with actual user registration number -->
+								                <input type="hidden" name="restaurantName" value="yummy">
+								                <button class="text" type="submit">yummy</button>
+								            </form>
+                <p>Juicy Burgers, Crispy Fries—A Match Made in Flavor Heaven!</p>
+            </div>
+            <div class="image-item">
+                <img src="https://img.freepik.com/premium-photo/indian-chicken-biryani-spicy-chicken-biryani-food-photography-flying-food-black-background_875825-50413.jpg"styles="height:300px;" alt="Twinkies">
+				<form action="/saveRestaurant" method="post">
+								                <input type="hidden" name="registrationNumber" value="userRegistrationNumber"> <!-- Replace with actual user registration number -->
+								                <input type="hidden" name="restaurantName" value="annapurna">
+								                <button class="text" type="submit">annapurna</button>
+								            </form>
+                <p>Savor the Spice: Where Fried Rice Meets Biryani Bliss!</p>
+            </div>
+            <div class="image-item">
+                <img src="https://tb-static.uber.com/prod/image-proc/processed_images/8fe82646a8a3f13b36e996a83752c618/3ac2b39ad528f8c8c5dc77c59abb683d.jpeg" alt="Pot Roast">
+				<form action="/saveRestaurant" method="post">
+				                <input type="hidden" name="registrationNumber" value="userRegistrationNumber"> <!-- Replace with actual user registration number -->
+				                <input type="hidden" name="restaurantName" value="kfc">
+				                <button class="text" type="submit">kfc</button>
+				            </form>
+                <p>Description of Pot Roast.</p>
+            </div>
+            <div class="image-item">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.SkGcTQJpyjJnoe97oXXS2QHaFj&pid=Api&P=0&h=180" alt="New Dish">
+				<form action="/saveRestaurant" method="post">
+								                <input type="hidden" name="registrationNumber" value="userRegistrationNumber"> <!-- Replace with actual user registration number -->
+								                <input type="hidden" name="restaurantName" value="dominos">
+								                <button class="text" type="submit">dominos</button>
+								            </form>
+                <p>Description of New Dish.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Grill BBQ. All rights reserved.</p>
+    </footer>
+</body>
+</html>

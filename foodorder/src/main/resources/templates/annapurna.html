@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/yummy.css">
+    <title>Yummy</title>
+</head>
+<body>
+    <h1 id="head">Annapurna</h1>
+    <p id="subtitle">Veg | Non-veg | Chinese | Softdrinks</p>
+
+    <div id="cart-count"><span id="count"></span></div>
+
+    <!-- Veg Section -->
+    <p id="veg">Veg</p>
+    <div class="veg-image-container">
+        <div class="food-item">
+            <img src="https://i.ytimg.com/vi/Do7ZdUodDdw/maxresdefault.jpg" alt="Food 1" class="food-image">
+            <p>Veg Biryani | ₹100</p>
+            <button class="add-to-cart" data-name="Cheese Balls" data-price="100" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://salasdaily.com/cdn/shop/products/VegFriedRice.jpg?v=1637640487" alt="Food 2" class="food-image">
+            <p>Veg Pulao | ₹180</p>
+            <button class="add-to-cart" data-name="Mushroom Tikka" data-price="180"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZRhyo-Zt6dtTBw9m-jPZYvkt8rMp9yZOsw&s" alt="Food 3" class="food-image">
+            <p>Veg Fried Rice | ₹150</p>
+            <button class="add-to-cart" data-name="Veggie Kebab" data-price="150"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrOciP0r_Jlix7Qs9HS_XGeA3XzDMWnA_z6w&s" alt="Food 4" class="food-image">
+            <p>Paneer Biryani | ₹80</p>
+            <button class="add-to-cart" data-name="Corn Chaat" data-price="80"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA3Z6It6XCxMk2PHSnYSdXtKirdVd3F4QETg&s" alt="Food 5" class="food-image">
+            <p>Mushroom Biryani | ₹50</p>
+            <button class="add-to-cart"data-name="Gobi Manchurian" data-price="50" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Non-Veg Section -->
+    <p id="nonveg">Non-Veg</p>
+    <div class="nonveg-image-container">
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSnrwj1_08fvni8zTUYH23RjJ5Nr3AuEvM7w&s" alt="Food 1" class="food-image">
+            <p>Chicken Biryani | ₹200</p>
+            <button class="add-to-cart"data-name="Chicken Spring Rolls" data-price="200" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_h9F8EeCBMIl4HBDCYoEGekUK1a80S4JdvQ&s" alt="Food 2" class="food-image">
+            <p>Mutton Biryani | ₹250</p>
+            <button class="add-to-cart" data-name="Chicken Manchurian" data-price="250"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCvqkMj_PXSdyelzVjz29xMCs-H-vAnfnbA&s" alt="Food 3" class="food-image">
+            <p>Fish Biryani | ₹450</p>
+            <button class="add-to-cart" data-name="Meat Balls" data-price="450"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPdg8ewaI81KS2VflCoIzAf0Rh-GqMguwDFA&s" alt="Food 4" class="food-image">
+            <p>Prawn Biryani | ₹120</p>
+            <button class="add-to-cart"data-name="Chicken Samosa" data-price="120" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwPUDHhE3WukSnYm-G4SjyW-JHlm9GVhggfw&s" alt="Food 5" class="food-image">
+            <p>Crab Biryani | ₹280</p>
+            <button class="add-to-cart"data-name="Chicken Majestic" data-price="280" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+
+    </div>
+	
+	<div class="checkout">
+	        <button class="check-out" onclick="proceedToCheckout()">Proceed To Check Out</button>
+	    </div>
+
+			    
+
+
+	<script>
+	    function toggleCart(button) {
+	        const currentButton = button;
+	        if (currentButton.innerText === 'Add to Cart') {
+	            currentButton.innerHTML = `
+	                <button onclick="decreaseCount(this)">-</button>
+	                <span class="cart-count">0</span>
+	                <button onclick="increaseCount(this)">+</button>
+	            `;
+	        }
+	    }
+
+	    function decreaseCount(button) {
+	        const countSpan = button.nextElementSibling;
+	        let currentCount = parseInt(countSpan.innerText);
+	        
+	        // Decrease count if greater than 0
+	        if (currentCount > 0) {
+	            currentCount--;
+	            countSpan.innerText = currentCount;
+	        }
+
+	        // If count reaches 0, revert to 'Add to Cart'
+	        if (currentCount === 0) {
+	            const parentButton = button.parentElement;
+	            parentButton.innerHTML = 'Add to Cart';
+	        }
+	    }
+
+	    function increaseCount(button) {
+	        const countSpan = button.previousElementSibling;
+	        let currentCount = parseInt(countSpan.innerText);
+	        currentCount++;
+	        countSpan.innerText = currentCount;
+	    }
+		
+		function proceedToCheckout() {
+		        const cartButtons = document.querySelectorAll('.add-to-cart');
+		        let cartItems = [];
+
+		        cartButtons.forEach((button) => {
+		            let currentText = button.innerText;
+
+		            if (currentText !== 'Add to Cart') {
+		                let number = parseInt(currentText.match(/\d+/)[0]);
+		                let itemName = button.getAttribute('data-name');
+		                let itemPrice = parseInt(button.getAttribute('data-price')) * number; // Example: replace with actual price logic
+
+		                cartItems.push({ name: itemName, quantity: number, price: itemPrice});
+		            }
+		        });
+
+		        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+		        window.location.href = '/checkout'; // Redirect to the next page (checkout page)
+		    }
+	</script>
+	
+
+
+</body>
+</html>

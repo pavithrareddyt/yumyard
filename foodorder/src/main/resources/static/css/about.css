@@ -1,0 +1,110 @@
+body{
+    background: linear-gradient(to left,pink,white);
+    height: 100vh;
+    margin: 0; 
+}
+#pic1{
+    position: absolute;
+    right:10%;
+    top: 18%;
+    border-radius: 150px;
+    display: block;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
+#intro{
+    position: absolute;
+    left:10%;
+    top: 25%;
+    width: 50%;
+    margin: 0 auto; 
+    text-align: justify;
+    font-style:italic;
+    font-size: larger;
+}
+#introhead{
+    position: absolute;
+    left:8%;
+    top: 10%;
+    font-size: 30px;
+    font-style: bold;
+    font-family:Arial, Helvetica, sans-serif
+}
+#missionhead{
+    position: absolute;
+    right:55%;
+    top: 70%;
+    font-size: 30px;
+    font-style: bold;
+    font-family:Arial, Helvetica, sans-serif
+}
+#mission{
+    position: absolute;
+    right:10%;
+    top: 85%;
+    width: 50%;
+    margin: 0 auto; 
+    text-align: justify;
+    font-style:italic;
+    font-size: larger;
+}
+#pic2{
+    position: absolute;
+    left:10%;
+    top: 85%;
+    border-radius: 150px;
+    display: block;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
+#missionpoints{
+    position: absolute;
+    right:5%;
+    top: 105%;
+    width: 50%;
+    margin: 0 auto; 
+    text-align: justify;
+    font-style:italic;
+    font-size: larger;
+}
+#pic3{
+    position: absolute;
+    right:10%;
+    top: 155%;
+    border-radius: 120px;
+    display: block;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
+#vissionhead{
+    position: absolute;
+    left:8%;
+    top: 140%;
+    font-size: 30px;
+    font-style: bold;
+    font-family:Arial, Helvetica, sans-serif
+}
+#vission{
+    position: absolute;
+    left:10%;
+    top: 155%;
+    width: 50%;
+    margin: 0 auto; 
+    text-align: justify;
+    font-style:italic;
+    font-size: larger;
+}
+#vissionpoints{
+    position: absolute;
+    left:12%;
+    top: 170%;
+    width: 50%;
+    margin: 0 auto; 
+    text-align: justify;
+    font-style:italic;
+    font-size: larger;
+}
+

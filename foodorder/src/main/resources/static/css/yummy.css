@@ -1,0 +1,127 @@
+body{
+    background: linear-gradient(100deg,rgb(189, 225, 247),white);
+    
+}
+#head{
+    position: absolute;
+    top:5%;
+    left: 5%;
+   font-size: 50px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#subtitle{
+    position: absolute;
+    top:18%;
+    left: 5%;
+}
+#veg{
+    position: absolute;
+    top:25%;
+    left: 5%;
+    font-size: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.veg-image-container {
+    display: flex;
+    gap: 100px;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+.nonveg-image-container {
+    display: flex;
+    gap: 100px;
+    position: absolute;
+    top: 100%;
+    left: 5%;
+}
+
+.food-image {
+    width: 150px; 
+    height: 150px;
+    border-radius: 15px; 
+    border: 2px solid #ccc;
+    object-fit: cover;
+}
+.vegfood{
+    display: flex;
+    gap: 180px;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    font-weight: bold;
+    font-size: 15px;
+}
+#nonveg{
+    position: absolute;
+    top:80%;
+    left: 5%;
+    font-size: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.nonimage-container {
+    display: flex;
+    gap: 100px;
+    position: absolute;
+    top: 100%;
+    left: 5%;
+}
+.nonvegfood{
+    display: flex;
+    gap: 180px;
+    position: absolute;
+    top: 125%;
+    left: 5%;
+    font-weight: bold;
+    font-size: 15px;
+}
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 1px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.add-to-cart:active {
+    background-color: #1e7e34;
+    transform: scale(0.98);
+}
+.checkout {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Take full width */
+    margin-bottom: 20px;
+    margin-right: 3%;
+    margin-top: 90%;
+}
+
+.check-out {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.check-out:hover {
+    background-color: rgb(170, 244, 244);
+}

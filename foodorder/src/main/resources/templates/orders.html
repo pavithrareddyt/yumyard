@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        table td {
+            background-color: #f9f9f9;
+        }
+        table tr:nth-child(even) td {
+            background-color: #f1f1f1;
+        }
+        table tr:hover td {
+            background-color: #f1f1f1;
+        }
+        button {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <h2>Order Details</h2>
+
+    <!-- Display the selected restaurant name -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Registration Number</th>
+                <th>Email</th>
+                <th>Item Names</th>
+                <th>Total Quantity</th>
+                <th>Total Cost</th>
+                <th>Restaurant Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Render each user's order dynamically -->
+            <tr th:each="user : ${users}">
+                <td th:text="${user.registrationNumber}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.itemName}"></td>
+                <td th:text="${user.itemQuantity}"></td>
+                <td th:text="${user.totalCost}"></td>
+                <td th:text="${user.restaurantName}"></td>
+                <td>
+                    <form th:action="@{/deleteOrder}" method="post">
+                        <input type="hidden" th:name="registrationNumber" th:value="${user.registrationNumber}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

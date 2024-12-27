@@ -1,0 +1,154 @@
+ul{
+    list-style-type: None;
+}
+li{
+    display:inline;
+    justify-content: space-evenly;
+}
+.vishnu{
+    background-color: aliceblue;
+    overflow: hidden;
+    padding: 23px 18px;
+}
+body{
+    background-image: url('/images/home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:0% 37%;
+}
+#hpic{
+    position: absolute;
+    top:4%;
+    right: 30%;
+}
+#apic{
+    position: absolute;
+    top:4.5%;
+    right: 11%;
+}
+#cpic{
+    position: absolute;
+    top:4.5%;
+    right: 7.5%;
+}
+#spic{
+    position: absolute;
+    top:4.5%;
+    right: 19.5%;
+}
+#lpic{
+    position: absolute;
+    top:4%;
+    right: 15.5%;
+}
+#adminpic{
+	 position: absolute;
+    top:4%;
+    right: 3.5%;
+}
+#wel{
+    position: absolute;
+    top:4%;
+    left:5%;
+    font-size: 30px;
+    color: rgb(39, 2, 2);
+}
+#home{
+    position: absolute;
+    top:8%;
+    right: 29.5%;
+    font-size: 15px;
+}
+#home a:hover{
+    color: rgb(175, 51, 6);
+}
+#menu a:hover{
+    color: rgb(175, 51, 6);
+}
+#sign a:hover{
+    color: rgb(175, 51, 6);
+}
+#about a:hover{
+    color: rgb(175, 51, 6);
+}
+#con a:hover{
+    color: rgb(175, 51, 6);
+}
+#about{
+    position: absolute;
+    top:8%;
+    right: 10.5%;
+    font-size: 15px;
+}
+#con{
+    position: absolute;
+    top:8%;
+    right: 5.5%;
+    font-size: 15px;
+}
+#adm{
+	position: absolute;
+    top:8%;
+    right: 2%;
+    font-size: 15px;
+}
+#sign{
+    position: absolute;
+    top:8%;
+    right: 18.5%;
+    font-size: 15px;
+}
+#login{
+    position: absolute;
+    top:8%;
+    right: 14.5%;
+    font-size: 15px;
+}
+#a{
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    font: italic;
+    font-size: 150px;
+    color: aliceblue;
+}
+#b{
+    position: absolute;
+    top: 55%;
+    left: 48%;
+    font-family:sans-serif;
+    font-size: 25px;
+    color: aliceblue;
+}
+.homelink{
+    text-decoration: none;
+    color: black;
+}
+.homelink:hover{
+    color: black;
+}
+.aboutlink{
+    text-decoration: none;
+    color: black;
+}
+.aboutlink:hover{
+    color: black;
+}
+.menulink{
+    text-decoration: none;
+    color: black;
+}
+.menulink:hover{
+    color: black;
+}
+#menu{
+    position: absolute;
+    top:8%;
+    right: 24.5%;
+    font-size: 15px;
+}
+#mpic{
+    position: absolute;
+    top:3.5%;
+    right: 25%;
+}

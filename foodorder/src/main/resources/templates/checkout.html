@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/css/checkout.css"> <!-- Optional: Add your CSS file for styles -->
+</head>
+
+
+<body>
+
+    <h1>Cart</h1>
+    <form id="checkout-form" action="/checkout" method="post">
+        <div id="cart-items"></div>
+        <input type="hidden" name="totalCost" id="total-cost-input" value="0">
+        <div class="summary">
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Cost: <span id="total-cost">0</span></p>
+            <button type="submit" id="checkout-button">Checkout</button>
+        </div>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            let totalItems = 0;
+            let totalCost = 0;
+
+            cartItems.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <p>${item.name}</p>
+                        <p>₹${item.price}</p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <span class="quantity">Qty: ${item.quantity}</span>
+                        <input type="hidden" name="itemName" value="${item.name}">
+                        <input type="hidden" name="itemQuantity" value="${item.quantity}">
+                    </div>
+                `;
+
+                cartItemsContainer.appendChild(cartItem);
+
+                totalItems += item.quantity;
+                totalCost += item.quantity * item.price;
+            });
+
+            document.getElementById('total-items').innerText = totalItems;
+            document.getElementById('total-cost').innerText = totalCost;
+            document.getElementById('total-cost-input').value = totalCost; // Set total cost in hidden input
+        });
+    </script>
+</body>
+</html>

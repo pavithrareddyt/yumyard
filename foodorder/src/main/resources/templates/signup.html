@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signup.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container buttons">
+        <div class="buttons">
+            <div id="btns"></div>
+            <h2>Sign Up</h2>
+        </div>
+		<form id="signup" class="input-field" action="/up" method="post">
+		    <input type="email" class="entry ph" name="email" placeholder="Email Address" required>
+		    <input type="text" class="entry ph" name="registrationNumber" placeholder="Registration Number" required>
+		    <input type="password" class="entry ph" name="password" placeholder="Password" required>
+		    <button type="submit" class="submit-btn">Sign Up</button>
+		</form>
+		<!-- Display the error message if it exists -->
+		<!-- Center horizontally -->
+		<p th:if="${message}" th:text="${message}" style="color: rgb(0, 0, 0); text-align: center;"></p>
+    </div>
+	
+
+</body>
+</html>

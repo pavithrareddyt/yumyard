@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/yummy.css">
+    <title>Yummy</title>
+</head>
+<body>
+    <h1 id="head">Yummy</h1>
+    <p id="subtitle">Veg | Non-veg | Chinese | Softdrinks</p>
+
+    <div id="cart-count"><span id="count"></span></div>
+
+    <!-- Veg Section -->
+    <p id="veg">Veg</p>
+    <div class="veg-image-container">
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpY5wi3hpvf3Z7H5L9W55X6GmhEqPyaFVWVQ&s" alt="Cheese Balls" class="food-image">
+            <p>Cheese Balls | ₹100</p>
+            <button class="add-to-cart" data-name="Cheese Balls" data-price="100" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://www.cookwithmanali.com/wp-content/uploads/2019/07/Mushroom-Tikka-500x500.jpg" alt="Mushroom Tikka" class="food-image">
+            <p>Mushroom Tikka | ₹180</p>
+            <button class="add-to-cart" data-name="Mushroom Tikka" data-price="180"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmrLEGLM1Nht4zH8hCQMkrMEBkn6s2hCvojw&s" alt="Veggie Kebab" class="food-image">
+            <p>Veggie Kebab | ₹150</p>
+            <button class="add-to-cart" data-name="Veggie Kebab" data-price="150"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEU7qmHRtU09SKdASM_o-A1rKH_dfrJ4RJwQ&s" alt="Corn Chaat" class="food-image">
+            <p>Corn Chaat | ₹80</p>
+            <button class="add-to-cart" data-name="Corn Chaat" data-price="80"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://theyummydelights.com/wp-content/uploads/2020/02/gobi-manchurian-8.jpg" alt="Gobi Manchurian" class="food-image">
+            <p>Gobi Manchurian | ₹50</p>
+            <button class="add-to-cart"data-name="Gobi Manchurian" data-price="50" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Non-Veg Section -->
+    <p id="nonveg">Non-Veg</p>
+    <div class="nonveg-image-container">
+        <div class="food-item">
+            <img src="https://ranveerbrar.com/wp-content/uploads/2021/02/Chicken-Spring-Rolls-1.jpg" alt="Chicken Spring Rolls" class="food-image">
+            <p>Chicken Spring Rolls | ₹200</p>
+            <button class="add-to-cart"data-name="Chicken Spring Rolls" data-price="200" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://t4.ftcdn.net/jpg/05/92/83/67/360_F_592836725_pl9I8yjadj0YazCQ8UwhEYJ8cNxvodcm.jpg" alt="Chicken Manchurian" class="food-image">
+            <p>Chicken Manchurian | ₹250</p>
+            <button class="add-to-cart" data-name="Chicken Manchurian" data-price="250"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://www.flavcity.com/wp-content/uploads/2018/06/meatballs-tomato-sauce.jpg" alt="Meat Balls" class="food-image">
+            <p>Meat Balls | ₹450</p>
+            <button class="add-to-cart" data-name="Meat Balls" data-price="450"onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://www.whiskaffair.com/wp-content/uploads/2022/11/Mutton-Keema-Samosa-2-3.jpg" alt="Chicken Samosa" class="food-image">
+            <p>Chicken Samosa | ₹120</p>
+            <button class="add-to-cart"data-name="Chicken Samosa" data-price="120" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+        <div class="food-item">
+            <img src="https://www.cookingandme.com/wp-content/uploads/2013/07/9236788671_29b8425b58_z-425x375.jpg" alt="Chicken Majestic" class="food-image">
+            <p>Chicken Majestic | ₹280</p>
+            <button class="add-to-cart"data-name="Chicken Majestic" data-price="280" onclick="toggleCart(this)">Add to Cart</button>
+        </div>
+
+    </div>
+	
+	<div class="checkout">
+	        <button class="check-out" onclick="proceedToCheckout()">Proceed To Check Out</button>
+	    </div>
+
+			    
+
+
+	<script>
+	    function toggleCart(button) {
+	        const currentButton = button;
+	        if (currentButton.innerText === 'Add to Cart') {
+	            currentButton.innerHTML = `
+	                <button onclick="decreaseCount(this)">-</button>
+	                <span class="cart-count">0</span>
+	                <button onclick="increaseCount(this)">+</button>
+	            `;
+	        }
+	    }
+
+	    function decreaseCount(button) {
+	        const countSpan = button.nextElementSibling;
+	        let currentCount = parseInt(countSpan.innerText);
+	        
+	        // Decrease count if greater than 0
+	        if (currentCount > 0) {
+	            currentCount--;
+	            countSpan.innerText = currentCount;
+	        }
+
+	        // If count reaches 0, revert to 'Add to Cart'
+	        if (currentCount === 0) {
+	            const parentButton = button.parentElement;
+	            parentButton.innerHTML = 'Add to Cart';
+	        }
+	    }
+
+	    function increaseCount(button) {
+	        const countSpan = button.previousElementSibling;
+	        let currentCount = parseInt(countSpan.innerText);
+	        currentCount++;
+	        countSpan.innerText = currentCount;
+	    }
+		
+		function proceedToCheckout() {
+		        const cartButtons = document.querySelectorAll('.add-to-cart');
+		        let cartItems = [];
+
+		        cartButtons.forEach((button) => {
+		            let currentText = button.innerText;
+
+		            if (currentText !== 'Add to Cart') {
+		                let number = parseInt(currentText.match(/\d+/)[0]);
+		                let itemName = button.getAttribute('data-name');
+		                let itemPrice = parseInt(button.getAttribute('data-price')) * number; // Example: replace with actual price logic
+
+		                cartItems.push({ name: itemName, quantity: number, price: itemPrice});
+		            }
+		        });
+
+		        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+		        window.location.href = '/checkout'; // Redirect to the next page (checkout page)
+		    }
+	</script>
+	
+
+
+</body>
+</html>
